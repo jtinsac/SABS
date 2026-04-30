@@ -20,7 +20,11 @@
             <input type="password" name="password">
 
             <label>User Type</label>
-            <input type="text" name="usertype" value="<?= isset($_POST['usertype']) ? htmlspecialchars($_POST['usertype']) : '' ?>">
+            <select name="usertype">
+                <option value="" disabled selected>Select User Type</option>
+                <option value="admin" <?= (isset($_POST['usertype']) && $_POST['usertype'] == 'admin') ? 'selected' : '' ?>>Admin</option>
+                <option value="user" <?= (isset($_POST['usertype']) && $_POST['usertype'] == 'user') ? 'selected' : '' ?>>User</option>
+            </select>
 
             <label>Name</label>
             <input type="text" name="name" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>">
